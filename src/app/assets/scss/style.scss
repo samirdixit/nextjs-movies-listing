@@ -259,6 +259,7 @@ form {
     .react-datepicker__navigation {
       & > * {
         @include flex-2;
+        font-size: 0px;
         width: 100%;
         height: 100%;
 
