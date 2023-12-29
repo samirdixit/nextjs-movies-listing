@@ -1,0 +1,311 @@
+@import "./variables.scss";
+
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  cursor: default;
+}
+
+.lh-h1 {
+  line-height: 5rem; // 80px
+}
+.lh-h2 {
+  line-height: 3.5rem; // 56px
+}
+.lh-h3 {
+  line-height: 2.5rem; // 40px
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: normal;
+}
+
+.transition {
+  transition: $transition;
+}
+
+::selection {
+  background-color: $primary;
+  color: $white;
+}
+
+.container {
+  padding-left: var(--bs-gutter-x);
+  padding-right: var(--bs-gutter-x);
+}
+
+.max-w-300 {
+  max-width: $max-w-300;
+}
+
+.btn {
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:disabled {
+    color: $white !important;
+  }
+
+  &.btn-min-w {
+    min-width: $btn-min-w;
+  }
+
+  &.btn-outline-light {
+    &:hover,
+    &:active,
+    &:disabled {
+      color: $secondary !important;
+    }
+  }
+}
+.btn-lg {
+  --bs-btn-padding-y: 0.95rem;
+  font-weight: 700;
+
+  @include media-breakpoint-down(md) {
+    --bs-btn-padding-y: 0.7rem;
+  }
+}
+
+@mixin flex-1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+@mixin flex-2 {
+  @include flex-1;
+  justify-content: center;
+  align-content: center;
+}
+
+form {
+  .form-control {
+    background-color: $secondary;
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    border-color: transparent;
+    border-radius: $border-radius-input;
+    box-shadow: 0px 0px 0px 100px $secondary inset;
+
+    &:focus {
+      background-color: $secondary;
+      text-overflow: ellipsis;
+      box-shadow: 0px 0px 0px 100px $secondary inset;
+    }
+  }
+  .form-check-input {
+    background-color: $secondary;
+    font-size: $font-size-base;
+    margin-top: 0.1rem;
+    border-color: transparent;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .form-error {
+    border-color: $danger;
+    &:focus {
+      border-color: $danger;
+    }
+  }
+  .form-text {
+    @include flex-1;
+    color: $white;
+    width: 100%;
+
+    &.form-text-error {
+      color: $danger;
+    }
+  }
+  .file-wrapper {
+    background-color: $secondary;
+    border-style: dashed;
+    height: clamp(250px, 60vw, 500px);
+    position: relative;
+    border-radius: $border-radius-input;
+  }
+}
+
+.bg-wave {
+  background-image: url("../images/wave.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+
+  @include media-breakpoint-down(md) {
+    background-size: auto 80px;
+  }
+}
+
+.card {
+  background-color: $dark;
+  border-radius: $border-radius-xl;
+
+  @include media-breakpoint-down(md) {
+    border-radius: $border-radius-lg;
+  }
+
+  &:hover {
+    background-color: $secondary;
+
+    .edit {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .card-header {
+    img {
+      height: clamp(200px, 60vw, 400px);
+
+      @include media-breakpoint-down(md) {
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+      }
+    }
+  }
+
+  .card-title {
+    @include media-breakpoint-down(md) {
+      font-size: $h6-font-size;
+    }
+  }
+
+  .edit {
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition;
+  }
+}
+
+.pagination-wrapper {
+  @include flex-1;
+  list-style: none;
+  justify-content: center;
+  padding: 0px 0px;
+  margin: 2rem 0rem 0rem 0rem;
+  width: 100%;
+
+  li {
+    margin-top: 0.7rem;
+    margin-left: 0.35rem;
+    margin-right: 0.35rem;
+
+    & > * {
+      @include flex-2;
+      background-color: $dark;
+      color: $white;
+      font-weight: 600;
+      text-decoration: none;
+      min-width: 32px;
+      min-height: 32px;
+      border-radius: $border-radius-sm;
+    }
+    &.previous,
+    &.next {
+      & > * {
+        background-color: transparent;
+        border-radius: 0px;
+      }
+    }
+    &.selected {
+      & > * {
+        background-color: $primary;
+      }
+    }
+    &.disabled {
+      & > * {
+        opacity: 0.7;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.Toastify {
+  .Toastify__toast-theme--colored {
+    &.Toastify__toast--success {
+      background-color: $primary;
+    }
+    &.Toastify__toast--error {
+      background-color: $danger;
+    }
+  }
+}
+
+.react-datepicker-popper {
+  .react-datepicker {
+    font-family: $font-family-sans-serif;
+    .react-datepicker__header {
+      background-color: $white;
+      color: $secondary;
+      border-color: $border-color;
+    }
+    .react-datepicker__navigation {
+      & > * {
+        @include flex-2;
+        width: 100%;
+        height: 100%;
+
+        &:before {
+          top: 13px;
+          left: auto;
+          right: 10px;
+        }
+      }
+    }
+    .react-datepicker__year-wrapper {
+      display: table;
+      .react-datepicker__year-text {
+        color: $secondary;
+        &.react-datepicker__year-text--keyboard-selected,
+        &.react-datepicker__year-text--selected {
+          background-color: $secondary;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.icon-spin {
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.page-not-found {
+  h1 {
+    font-size: clamp(7rem, 20vw, 15rem);
+  }
+  h4 {
+    @include media-breakpoint-down(md) {
+      font-size: $h6-font-size;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}

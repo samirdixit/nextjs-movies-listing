@@ -1,0 +1,64 @@
+$enable-negative-margins: true;
+
+// family
+$font-family-sans-serif: "Montserrat", sans-serif;
+
+// size
+$font-size-base: 1rem; // 16px
+
+$h1-font-size: $font-size-base * 4; // 64px
+$h2-font-size: $font-size-base * 3; // 48px
+$h3-font-size: $font-size-base * 2; // 32px
+$h4-font-size: $font-size-base * 1.5; // 24px
+$h5-font-size: $font-size-base * 1.25; // 20px
+$h6-font-size: $font-size-base * 1; // 16px
+
+$font-size-lg: $font-size-base * 1.25; // 20px
+$font-size-sm: $font-size-base * 0.875; // 14px
+$font-size-xs: $font-size-base * 0.75; // 12px
+
+$font-sizes: (
+  lg: $font-size-lg,
+  sm: $font-size-sm,
+  xs: $font-size-xs,
+);
+
+// line-height
+$line-height-h1: 5; // 80px
+$line-height-h2: 3.5; // 56px
+$line-height-h3: 2.5; // 40px
+$line-height-lg: 2; // 32px
+$line-height-base: 1.5; // 24px
+$line-height-sm: 1; // 16px
+
+// color
+$primary: #2bd17f; // primary
+$secondary: #224958; // input
+$success: #2bd17f; // primary
+$danger: #eb5757; // error
+$dark: #0a2c38; // card
+$white: #ffffff; // white
+
+$body-bg: #0a3545; // background
+$body-color: $white; // white
+
+// container width
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 100%,
+  xxl: 1488px,
+);
+
+// custom
+$btn-font-size-lg: $font-size-base;
+$btn-color: $white;
+$btn-hover-color: $white;
+$btn-active-color: $white;
+$btn-disabled-color: $white;
+$transition: all 0.3s ease-in-out 0s;
+
+$border-radius-input: 0.625rem;
+$max-w-300: 300px;
+$btn-min-w: 180px;
